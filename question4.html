@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="project1.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+	<nav class="nav navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#kate">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+
+				</button>
+				<a href="project1-eng.html" class="navbar-brand company">
+					<p style="color: white; font-size: 28px;margin-top: -5px;">RETR <img style="width: 30px; height: auto;" src="smiley_PNG72.png"><img style="width: 40px; height: auto; margin-left:-8px;" src="glassy-smiley-bad-c02.png">SPECT</p>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="kate">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a style="color:white; padding-top: 20px;" href="http://codepreneurs.co/" target="_blank"><i class="fa fa-home" aria-hidden="true"></i> Academy for programing</a>
+					</li>
+					<li>
+						<a style="color: white; padding-top: 20px;" href="https://brainster.co/courses#!/grid/infinite/throttle:30/threshold:30/" target="_blank"><i class="fa fa-users" aria-hidden="true"></i> Courses</a>
+					</li>
+					<li><a style="color:white; padding-right: 0;" href="project1-eng.html">ENG <img style="width: 30px;height: auto;" src="united_kingdom_great_british_union_jack_flag.png"></a></li>
+					<li><a style="color: white;" href="project1-mkd.html">MKD <img style="width: 30px;height: auto;" src="flag-round-250.png"></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row text-center" style="padding-top: 120px;">
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<i class="fa fa-graduation-cap fa-5x" aria-hidden="true"></i>
+				<h2>How much did you feel like you've learned?</h2>
+				<div class="main-slider" style="padding-bottom: 30px;">
+					<input type="range" class="slider" id="slider-main"
+						min="0" step="1" max="100" />
+						<h3><span id="print-text" style="color:  rgb(187, 205, 131)">Just another ordinary week</span></h3>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-md-offset-4 col-xs-6">
+					<a style="color: white;" href="question3.html"><button style="padding: 20px 0; background-color: rgb(96, 93, 93); text-transform: uppercase;" class="btn btn-lg btn-block btn-secondary">
+					<i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button></a>
+			</div>
+			<div class="col-md-2 col-xs-6">
+				<button style="padding: 20px 0; text-transform: uppercase;" class="btn btn-lg btn-block btn-success">
+					<a style="color: white;" href="question5.html">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a></button>
+			</div>
+		</div>
+	</div>
+	<footer style="height: 50px; background-color: black; text-align: center; padding-top: 18px; margin-top: 95px; color: white;">&copy Katerina Georgievska</footer>
+	<script>
+		var slider = document.getElementById("slider-main");
+var outputText = document.getElementById("print-text");
+
+slider.oninput = function() {
+    keeper(this.value);
+}
+function keeper(value) {
+    if(value<=19) {
+        outputText.innerHTML= "This week was terrible";
+        outputText.style.color = "red";
+        slider.setAttribute("id", "slider2");
+        slider.style.background  = "red";
+        $(slider).removeClass();
+        $(slider).addClass("slider-main slider3");
+        localStorage.setItem('learning', "6.png");
+        localStorage.setItem('learningNo', "1.0");
+
+    } else if (value<= 40){
+        outputText.innerHTML= "It could have been better";
+        outputText.style.color = "rgb(249, 180, 98)";
+        slider.style.background  = "rgb(249, 180, 98)";
+         $(slider).removeClass();
+        $(slider).addClass("slider-main slider2");
+        localStorage.setItem('learning', "7.png");
+        localStorage.setItem('learningNo', "2.0");
+    
+    } else if (value<= 60){
+        outputText.innerHTML= "Јust another ordinary working week";
+        outputText.style.color = "rgb(187, 205, 131)";
+        slider.style.background  = "rgb(187, 205, 131)";
+         $(slider).removeClass();
+        $(slider).addClass("slider-main slider");
+        localStorage.setItem('learning', "8.png");
+         localStorage.setItem('learningNo', "3.0");
+    
+    }  else if (value<= 90){
+        outputText.innerHTML= "It was fun";
+        outputText.style.color = "rgb(92, 184, 92)";
+        slider.style.background  = "rgb(92, 184, 92)";
+         $(slider).removeClass();
+        $(slider).addClass("slider-main slider4");
+        localStorage.setItem('learning', "9.png");
+         localStorage.setItem('learningNo', "4.0");
+    
+    }
+    else if (value<= 100){
+        outputText.innerHTML= "WOW, great week";
+        outputText.style.color = "rgb(239, 112, 152)";
+        slider.style.background  = "rgb(239, 112, 152)";
+         $(slider).removeClass();
+        $(slider).addClass("slider-main slider5");
+        localStorage.setItem('learning', "10.png");
+         localStorage.setItem('learningNo', "5.0");
+    
+    }
+
+}
+
+		</script>
+</body>
+</html>
